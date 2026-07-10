@@ -76,23 +76,6 @@ python scripts/loso_experiment.py --rules-dir outputs/rules_v2 --out-dir outputs
 - `loso_experiment --save-ply` — write predicted PLYs; big held-out slopes are
   subsampled to `--ply-max-points` (default 2M). `--full-ply` forces native res.
 
-## Layout
-
-```
-configs/dataset.yaml                    # slope files, classes
-scripts/ingest_slopes.py                # raw -> canonical parquet (per slope)
-scripts/review_slopes.py                # 3-view RGB previews + summary
-scripts/loso_experiment.py              # leave-one-slope-out RF cross-validation
-scripts/relabel_rules.py                # re-apply rules to cached features (no recompute)
-scripts/verify_colorized_cloud.py       # single-cloud summary + preview
-src/pcio/                               # canonical schema + loaders
-src/features/geometric.py               # geometric + color features (scale-normalized)
-src/segmentation/auto_label.py          # rule-based per-point weak labeling (+ local_height)
-src/segmentation/stage1_unsupervised.py # HDBSCAN structure view (optional)
-src/segmentation/labeling.py            # cluster->class mapping / manual-label helpers
-src/segmentation/stage2_supervised.py   # single train/test-pair RF (alternative to LOSO)
-```
-
 Notes: `jakteristics` makes the geometric features fast (there's a slower PCA
 fallback if it's absent). `stage2_supervised.py` is an older single-split path
 that takes labels from a cluster→class YAML or a hand-painted cloud
