@@ -75,8 +75,3 @@ python scripts/loso_experiment.py --rules-dir outputs/rules_v2 --out-dir outputs
 - `loso_experiment --train-cap N` — points per training slope (balance/speed).
 - `loso_experiment --save-ply` — write predicted PLYs; big held-out slopes are
   subsampled to `--ply-max-points` (default 2M). `--full-ply` forces native res.
-
-Notes: `jakteristics` makes the geometric features fast (there's a slower PCA
-fallback if it's absent). `stage2_supervised.py` is an older single-split path
-that takes labels from a cluster→class YAML or a hand-painted cloud
-(`labeling.py`); LOSO is the primary automated evaluation.
