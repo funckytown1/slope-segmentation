@@ -1,0 +1,59 @@
+# Configuration for the Zenodo rock-slope segmentation pipeline.
+
+active_dataset: zenodo_rock_slopes
+
+datasets:
+  zenodo_rock_slopes:
+    kind: pre_colorized_ascii
+    description: "UAV-photogrammetry rock slope point clouds, pre-colorized XYZRGB"
+    citation: >
+      Point cloud datasets from "Automatic Planar Discontinuity
+      Identification with Comprehensive Error Quantification: Case Study of
+      Multi-structured Slopes Using 3D Point Cloud Analytics".
+      https://doi.org/10.5281/zenodo.16934958
+    license: CC-BY-4.0
+    raw_dir: data/raw/zenodo_slopes
+    # .txt files are X Y Z R G B, whitespace-delimited, RGB already 0-1 floats.
+    # .pcd files: read via Open3D, verify RGB field present before trusting.
+    # Each slope -> one canonical parquet. Multi-part slopes (Zenodo splits
+    # Slope_3 into 2 .pcd, Slope_4 into 4 .txt) list all their parts and get
+    # concatenated into a single cloud. Edit to match what you downloaded.
+    # Each Zenodo slope -> one canonical parquet. Slope_3 ships as 2 .pcd and
+    # Slope_4 as 4 .txt; those parts are concatenated into one cloud.
+    slopes:
+      slope_2:
+        - data/raw/zenodo_slopes/Slope_2.txt
+      slope_3:
+        - data/raw/zenodo_slopes/Slope_3_1.pcd
+        - data/raw/zenodo_slopes/Slope_3_2.pcd
+      slope_4:
+        - data/raw/zenodo_slopes/Slope_4_1.txt
+        - data/raw/zenodo_slopes/Slope_4_2.txt
+        - data/raw/zenodo_slopes/Slope_4_3.txt
+        - data/raw/zenodo_slopes/Slope_4_4.txt
+      slope_5:
+        - data/raw/zenodo_slopes/Slope_5.txt
+      slope_6:
+        - data/raw/zenodo_slopes/Slope_6.txt
+    # The two slopes differ in lithology + lighting, so color does NOT
+    # transfer between them. Normalize color per-cloud and lean on geometry.
+    per_cloud_color_normalization: true
+    output_parquet_dir: data/processed/zenodo   # one parquet per slope
+
+# Class taxonomy — placeholder, intentionally coarse, finalized after
+# eyeballing Stage 1 unsupervised clusters. Rock-face oriented.
+classes:
+  - name: intact_rock
+    notes: "Solid exposed rock face / massive outcrop"
+  - name: discontinuity_or_fracture
+    notes: "Joints, cracks, fracture zones — the key structural hazard signal"
+  - name: loose_block_or_debris
+    notes: "Detached/overhanging blocks, talus at base"
+  - name: vegetation
+    notes: "Moss/plants on ledges and in cracks (easiest class via color)"
+  - name: shadow_or_background
+    notes: "Deep recesses, occlusion, non-rock background"
+
+# Canonical schema every loader must emit (see src/io/canonical.py)
+canonical_columns: [x, y, z, r, g, b]
+color_range: "0_1"

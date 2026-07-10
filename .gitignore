@@ -1,0 +1,25 @@
+# Original/raw data (download separately -- see README "Data" section for
+# the Zenodo source: https://zenodo.org/records/16934958). Not redistributed
+# here; too large for git and license-bound to the Zenodo record.
+data/raw/
+data/processed/
+
+# Point clouds and other large binary point-cloud artifacts, anywhere in the
+# repo (outputs/rules*, outputs/loso*, outputs/previews, ...). These are all
+# regenerable from the pipeline scripts -- see README -- so they aren't
+# tracked. PNGs and markdown reports ARE tracked (small, meant for review).
+*.ply
+*.pcd
+*.las
+*.laz
+*.parquet
+*.e57
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+
+# OS
+.DS_Store

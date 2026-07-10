@@ -1,0 +1,25 @@
+# Core
+numpy
+pandas
+pyarrow
+pyyaml
+tqdm
+
+# Point cloud I/O
+laspy[laszip]>=2.4     # LAS/LAZ reading; laszip extra handles compressed .laz
+lazrs                  # faster LAZ backend for laspy
+open3d                 # .pcd I/O, downsampling, .ply export, quick viz
+
+# Raster / geospatial
+rasterio                # orthophoto reading + CRS-aware sampling
+affine
+
+# Verification / preview
+matplotlib
+
+# --- Used in later stages (features / segmentation), listed now so one
+# --- install covers the whole project ---
+scikit-learn
+jakteristics             # fast per-point geometric features (planarity, verticality, etc.)
+hdbscan
+scipy                    # nearest-neighbor matching for the manual-labeling fallback

@@ -1,0 +1,287 @@
+{
+  "slope_2": {
+    "n_train": 320000,
+    "n_test_eval": 300000,
+    "macro_f1_all": 0.7465159973528432,
+    "macro_f1_geometry_only": 0.7289128606583994,
+    "per_class_f1": {
+      "intact_rock": 0.8907177157270125,
+      "discontinuity_or_fracture": 0.5778886673749806,
+      "loose_block_or_debris": 0.7181321988732051,
+      "vegetation": 0.555593335600136,
+      "shadow_or_background": 0.9902480691888814
+    },
+    "confusion_labels": [
+      "intact_rock",
+      "discontinuity_or_fracture",
+      "loose_block_or_debris",
+      "vegetation",
+      "shadow_or_background"
+    ],
+    "confusion": [
+      [
+        137725,
+        573,
+        12846,
+        5,
+        55
+      ],
+      [
+        12739,
+        24204,
+        21599,
+        31,
+        35
+      ],
+      [
+        6876,
+        280,
+        53089,
+        0,
+        32
+      ],
+      [
+        701,
+        102,
+        42,
+        817,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        424,
+        27823
+      ]
+    ]
+  },
+  "slope_3": {
+    "n_train": 320000,
+    "n_test_eval": 300000,
+    "macro_f1_all": 0.6585302140912139,
+    "macro_f1_geometry_only": 0.5298597251250963,
+    "per_class_f1": {
+      "intact_rock": 0.8168807100351833,
+      "discontinuity_or_fracture": 0.5508860311989041,
+      "loose_block_or_debris": 0.22181243414120128,
+      "vegetation": 0.9127892971630811,
+      "shadow_or_background": 0.7902825979176995
+    },
+    "confusion_labels": [
+      "intact_rock",
+      "discontinuity_or_fracture",
+      "loose_block_or_debris",
+      "vegetation",
+      "shadow_or_background"
+    ],
+    "confusion": [
+      [
+        112839,
+        0,
+        0,
+        9,
+        0
+      ],
+      [
+        17897,
+        18699,
+        1006,
+        806,
+        0
+      ],
+      [
+        24036,
+        3169,
+        4210,
+        1049,
+        0
+      ],
+      [
+        8648,
+        7611,
+        280,
+        98521,
+        138
+      ],
+      [
+        0,
+        0,
+        0,
+        285,
+        797
+      ]
+    ]
+  },
+  "slope_4": {
+    "n_train": 320000,
+    "n_test_eval": 300000,
+    "macro_f1_all": 0.5047192240137368,
+    "macro_f1_geometry_only": 0.4459446663646214,
+    "per_class_f1": {
+      "intact_rock": 0.7329115015053392,
+      "discontinuity_or_fracture": 0.1856629808146678,
+      "loose_block_or_debris": 0.41925951677385714,
+      "vegetation": 0.5345305938812237,
+      "shadow_or_background": 0.6512315270935961
+    },
+    "confusion_labels": [
+      "intact_rock",
+      "discontinuity_or_fracture",
+      "loose_block_or_debris",
+      "vegetation",
+      "shadow_or_background"
+    ],
+    "confusion": [
+      [
+        123301,
+        0,
+        0,
+        2904,
+        0
+      ],
+      [
+        55922,
+        7858,
+        10991,
+        1275,
+        0
+      ],
+      [
+        30233,
+        403,
+        15678,
+        1012,
+        0
+      ],
+      [
+        806,
+        341,
+        794,
+        14257,
+        2118
+      ],
+      [
+        2,
+        0,
+        0,
+        15580,
+        16525
+      ]
+    ]
+  },
+  "slope_5": {
+    "n_train": 320000,
+    "n_test_eval": 300000,
+    "macro_f1_all": 0.6974338850711937,
+    "macro_f1_geometry_only": 0.6133252701204032,
+    "per_class_f1": {
+      "intact_rock": 0.6971571058898451,
+      "discontinuity_or_fracture": 0.6577551866471999,
+      "loose_block_or_debris": 0.48506351782416474,
+      "vegetation": 0.6700706991358995,
+      "shadow_or_background": 0.97712291585886
+    },
+    "confusion_labels": [
+      "intact_rock",
+      "discontinuity_or_fracture",
+      "loose_block_or_debris",
+      "vegetation",
+      "shadow_or_background"
+    ],
+    "confusion": [
+      [
+        77725,
+        51322,
+        6481,
+        97,
+        0
+      ],
+      [
+        6795,
+        91229,
+        6973,
+        102,
+        0
+      ],
+      [
+        2717,
+        29616,
+        21669,
+        137,
+        0
+      ],
+      [
+        115,
+        129,
+        83,
+        853,
+        160
+      ],
+      [
+        0,
+        0,
+        0,
+        17,
+        3780
+      ]
+    ]
+  },
+  "slope_6": {
+    "n_train": 320000,
+    "n_test_eval": 115858,
+    "macro_f1_all": 0.5936043270580612,
+    "macro_f1_geometry_only": 0.4759691165253401,
+    "per_class_f1": {
+      "intact_rock": 0.4647401558624536,
+      "discontinuity_or_fracture": 0.6222414604881457,
+      "loose_block_or_debris": 0.340925733225421,
+      "vegetation": 0.56,
+      "shadow_or_background": 0.9801142857142857
+    },
+    "confusion_labels": [
+      "intact_rock",
+      "discontinuity_or_fracture",
+      "loose_block_or_debris",
+      "vegetation",
+      "shadow_or_background"
+    ],
+    "confusion": [
+      [
+        15833,
+        34337,
+        1940,
+        0,
+        0
+      ],
+      [
+        0,
+        40969,
+        1,
+        5,
+        0
+      ],
+      [
+        159,
+        14918,
+        4423,
+        0,
+        0
+      ],
+      [
+        35,
+        483,
+        83,
+        441,
+        78
+      ],
+      [
+        0,
+        0,
+        0,
+        9,
+        2144
+      ]
+    ]
+  }
+}
